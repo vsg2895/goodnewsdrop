@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 42">
+  <!-- Good News Drop mark: a DROP with a face in it. A green teardrop on the
+       newsprint, two eyes and a smile cut out of it in the paper colour, and
+       two yellow speed lines trailing off the shoulders — a drop falling,
+       which is the name, and smiling, which is the rest of it.
+
+       The cut-outs are the PAPER colour and not white: this mark sits on
+       newsprint, and a white smile on a green drop on a cream page reads as a
+       third colour rather than as a hole punched through.
+
+       The first <rect fill> is what app/apple-icon.tsx reads as the 180x180
+       background plate — the page's own newsprint, so iOS composites the drop
+       onto its own paper rather than onto black. It is drawn across the full
+       viewBox and square, because nothing on this site has a radius.
+
+       src/app/favicon.ico is the same artwork rasterised at 16/32/48 — see
+       scripts/make-favicon.py. -->
+  <rect width="42" height="42" fill="#f3efe6"/>
+  <path d="M21 4C21 4 6.5 20 6.5 29.4a14.5 14.5 0 0029 0C35.5 20 21 4 21 4z" fill="#0e8f4f"/>
+  <path d="M15.5 29.4a6.5 6.5 0 0011 0" fill="none" stroke="#f3efe6" stroke-width="2.6" stroke-linecap="round"/>
+  <circle cx="17.3" cy="23.6" r="1.8" fill="#f3efe6"/>
+  <circle cx="24.7" cy="23.6" r="1.8" fill="#f3efe6"/>
+  <path d="M12.6 16.6l-4-2.6M29.4 16.6l4-2.6" stroke="#ffe45c" stroke-width="2.4" stroke-linecap="round"/>
+</svg>
