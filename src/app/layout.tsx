@@ -19,6 +19,7 @@ import { resolveImageUrl } from '@/lib/images'
 import { LEGAL_PAGES } from '@/constants/legalPages'
 import type { SocialLink } from '@shared/types/socialLink'
 import './globals.css'
+import BrandMark from '@/components/BrandMark'
 
 // The THREE faces of sites/goodnewsdrop.html, which is one more than any
 // sibling uses — and a newspaper is exactly the thing that needs three.
@@ -346,10 +347,24 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
             only mark on the page, which is why it is not hidden with the nav. */}
         <header className="rule-double sticky top-0 z-40 bg-cream">
           <div className="mx-auto flex w-full max-w-[1240px] items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:justify-center">
-            {/* `min-h-11` and `inline-flex`: below `lg` this is the only link
-                in the bar and the only mark on the page, and a 22px-tall
-                wordmark is half the 44px tap target. */}
-            <Link href="/" className="font-display inline-flex min-h-11 shrink-0 items-center text-[22px] tracking-[-0.02em] text-ink lg:hidden">
+            {/* THE MARK IS HERE FOR PHONES ONLY, and `lg:hidden` is the reason
+                why — it is not an oversight.
+
+                The masthead above already carries the drop at full size, but
+                the masthead is desktop-only: below `lg` it is hidden and this
+                bar is all a phone ever sees, which is how the brand ended up
+                being three words of text and no mark on exactly the devices
+                most people arrive on. Showing it at every width instead would
+                print the same lockup twice, 40px apart, on a page whose
+                masthead is the whole point of the design.
+
+                `min-h-11` and `inline-flex`: below `lg` this is the only link
+                in the bar, and a 22px-tall wordmark is half the 44px tap
+                target. */}
+            <Link href="/" className="font-display inline-flex min-h-11 shrink-0 items-center gap-2 text-[22px] tracking-[-0.02em] text-ink lg:hidden">
+              {/* 26px: tall enough to read the face at a glance, short enough
+                  to sit on the wordmark's cap height rather than above it. */}
+              <BrandMark className="h-[26px] w-[26px] shrink-0" />
               {COPY.site.wordmarkHead}<i className="font-semibold not-italic italic text-brand">{COPY.site.wordmarkTail}</i>
             </Link>
             <nav aria-label="Main navigation" className="hidden lg:block">
